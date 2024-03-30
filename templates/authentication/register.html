@@ -1,0 +1,69 @@
+{% extends "partials/base_auth.html" %} {% block content %}
+{% load static %}
+
+<style>
+    .create-ac-link{
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.create-link-ac {
+    margin-left: 50px;
+    color: blue;
+    font-size: 15px;
+    text-transform:unset;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.login_title {
+    box-sizing: border-box;
+    font-family: 500;
+    font-family: 'Times New Roman', Times, serif;
+  }
+</style>
+
+<div class="row">
+    <div class="card">
+        <div class="card-title">
+            <h4 class="login_title">Sign Up</h4>
+        </div>
+            <form action="{% url 'register' %}" method="post">{% csrf_token %}
+                <div class="form-group">
+                    <input
+                    type="text" 
+                    name="username" 
+                    placeholder="username" 
+                    id="usernameField"
+                    class="form-control form-control-sm">
+                </div>
+                <div class="invalid_feedback" style="display: none;"></div>
+                <p class='text-sm text-success usernameSuccessOutput'></p>
+                <div class="form-group">
+                    <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    id="emailField"
+                    value="{{fieldValues.email}}"
+                    class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="password" 
+                    id="passwordField"
+                    class="form-control form-control-sm">
+                    <div class="show-container">
+                        <small small class="register-show showPasswordToggle">SHOW</small>
+                    </div>
+                </div>
+                <input type="submit" value="register" class="sign_up">
+                <div class="create-ac-link">
+                    <p><a href="{% url 'login' %}" class="create-link-ac">Login</a></p>
+                </div>
+          </form>
+    </div>
+</div>
+<script src="{% static "js/register.js" %}" ></script>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  .currency_save {
+    color: red;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(2, 2, 2);
+    color: rgb(2, 2, 2);
+    padding-top: -2px;
+    padding: 5px 15px;
+  }
+  .currency_save:hover {
+      background-color: rgb(74, 74, 74);
+      margin-left: 20px;
+      border-radius: 10px;
+      border: 2px solid rgb(255, 255, 255);
+      color: #ffffff;
+      transition: 0.4s;
+      padding-top: -2px;
+      padding: 5px 15px;
+  }
+
+
+
+  .input-group {
+    margin-top: 20px;
+  }
+
+</style>
+
+
+<div class="new-container mt-3">
+  <h5>Preferrered Currency</h5>
+  {% include "partials/_messages.html" %}
+  <form action="{% url 'preferences' %}" method="post">{% csrf_token %}
+    <div class="input-group">
+      <select name="currency" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+      {% if user_preferences.currency %}
+          
+      {% endif %}
+
+
+
+        <option selected>Choose...</option>
+        {% for currency in currencies %}
+          <option name="currency" selected value="{{ currency.name }} - {{ currency.value }}">{{ currency.name }} - {{ currency.value }}</option>
+        {% endfor %}
+    </select>
+      <div>
+          <input class="currency_save" type="submit" value="sava">
+    </div>
+    </div>
+  </form>
+</div>
+
+
+
+{% endblock content %}
+
+

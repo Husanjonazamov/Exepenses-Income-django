@@ -1,0 +1,63 @@
+{% extends "partials/base_auth.html" %} {% block content %}
+  
+{% load static %}
+<link rel="stylesheet" href="{% static "css/login.css" %}">
+<style>
+  .login_title {
+    box-sizing: border-box;
+    font-family: 500;
+    font-family: 'Times New Roman', Times, serif;
+  }
+</style>
+
+<div class="row">
+  <div class="card">
+    <div class="card-title">
+      <h2 class="login_title">Login</h2>
+    </div>
+    <form action = '{% url "login" %}' method="post">{% csrf_token %}
+        {% include "partials/_messages.html" %}
+        <div class="form-group">
+            <input
+            type="text" 
+            name="username" 
+            placeholder="username" 
+            id="usernameField"
+            value="{{ fieldValues.email }}"
+            class="form-control form-control-sm">
+        </div>
+        <!-- <div class="invalid_feedback" style="display: none;"></div>
+        <p class='text-sm text-success usernameSuccessOutput'></p> -->
+        <div class="form-group">
+            <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            id="passwordField"
+            class="form-control form-control-sm">
+            <p class="register_show showPasswordToggle">SHOW</p>
+        </div>
+        <input type="submit" value="Login" class="login">
+        <div class="forget-create-link">
+          <p>Don't have an account?<a href="{% url 'register' %}" class="create-link">Sign Up</a><br></p>
+          <a href="{% url 'request-password' %}" class="forget-link">Forget Password ?</a>
+        </div>
+    </form>
+</div>
+</div>
+<script src="{% static "js/register.js" %}"></script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

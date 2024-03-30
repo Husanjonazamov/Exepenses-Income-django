@@ -1,0 +1,63 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.card {
+    margin-top: 80px;
+    margin-left: 147%;
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+}
+.row{
+    width: 72%;
+}
+.form-group {
+    padding-top: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.card-title h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: rebeccapurple;
+
+}
+.form-group input {
+    padding: 10px 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+
+}
+.form-group input:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.sign_up {
+    border-radius: 5px;
+    margin-top: 25px;
+    padding: 4px 40px;
+    margin-left: 30%;
+    background-color: rgb(39, 39, 235);
+    border: 2px solid rgb(56, 56, 225);
+    color:rgb(255, 255, 255);
+}
+.sign_up:hover{
+    border: 2px solid rgb(3, 34, 107);
+    background-color: rgb(3, 34, 107);
+    color:rgb(254, 254, 254);
+    box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 8px 27px -5px rgba(0,0,0,0.75);
+    transition: 0.70s;
+}
+
+.show-container {
+    padding-top: 15px;
+    padding-left: 85%;
+    color: red;
+    cursor: pointer;
+}
+
